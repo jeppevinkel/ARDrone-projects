@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Drone Stream</title>
+  </head>
+  <body>
+    <img id="img" width="100%">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      function b64(e){var t="";var n=new Uint8Array(e);var r=n.byteLength;for(var i=0;i<r;i++){t+=String.fromCharCode(n[i])}return window.btoa(t)}
+
+      var socket = io();
+
+      socket.on('newFrame', function(data) {
+        $("#img").attr("src","data:image/png;base64,"+b64(data.buffer));
+      });
+      socket.on('newFrame2', function(data) {
+        $("#img").attr("src",data);
+      });
+    </script>
+  </body>
+</html>
