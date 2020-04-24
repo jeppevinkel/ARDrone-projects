@@ -1,0 +1,15 @@
+{
+  "name": "drone-follow",
+  "version": "1.0.0",
+  "description": "Simple test project for the drone to auto follow someone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeppe Vinkel Beier",
+  "license": "MIT",
+  "dependencies": {
+    "opencv": "github:peterbraden/node-opencv",
+    "opencv4nodejs": "^5.5.0"
+  }
+}
